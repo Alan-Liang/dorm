@@ -30,14 +30,15 @@
           <v-list-item-title>我给室友买了东西</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-      <v-list-item nuxt to="/outgoing">
+      <!-- 防止双向记账 -->
+      <!--v-list-item nuxt to="/outgoing">
         <v-list-item-icon>
           <v-icon>mdi-location-exit</v-icon>
         </v-list-item-icon>
         <v-list-item-content>
           <v-list-item-title>室友给我买了东西</v-list-item-title>
         </v-list-item-content>
-      </v-list-item>
+      </v-list-item-->
       <v-list-item nuxt to="/public">
         <v-list-item-icon>
           <v-icon>mdi-earth</v-icon>
