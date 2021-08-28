@@ -83,7 +83,7 @@ router.post('/api/passwd', getSession, async ctx => {
   const { password } = await db.findOne({ is: 'user', name: ctx.state.name })
   if (!await argon2.verify(password, current)) return ctx.body = { status: 401, message: '密码错误' }
   if (await userFromPassword(future)) return ctx.body = { status: 400, message: '密码重复' }
-  await db.update({ is: 'user', name: ctx.state.name }, { password: await argon2.hash(future) })
+  await db.update({ is: 'user', name: ctx.state.name }, { $set: { password: await argon2.hash(future) } })
   return ctx.body = { status: 0 }
 })
 
